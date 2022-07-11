@@ -29,15 +29,14 @@ public class DriverChrome extends Driver {
 		
 		if (ConfigProp.getPlatform().equals("local")){
 			System.setProperty("webdriver.chrome.driver",ConfigProp.getChromePath());
-//			LOGGER.debug("webdriver.chrome.driver,ConfigProp.getChromePath()");
+			LOGGER.debug("webdriver.chrome.driver,ConfigProp.getChromePath()");
 			driver = new ChromeDriver(options);
+		}else {
+			String remoteUrl = "http://localhost:4444/wd/hub";
+			URL url = new URL(remoteUrl);
+			System.out.println("Selenium grid url is: " + remoteUrl);
+			driver = new RemoteWebDriver(url,options);
 		}
-//		else {
-//			String remoteUrl = "http://localhost:4444/wd/hub";
-//			URL url = new URL(remoteUrl);
-//			System.out.println("Selenium grid url is: " + remoteUrl);
-//			driver = new RemoteWebDriver(url,options);
-//		}
 		
 	}
 

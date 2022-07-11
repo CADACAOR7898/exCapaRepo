@@ -18,7 +18,7 @@ import io.qameta.allure.Description;
 		"html:target/cucumber-reports/cucumber.html", 
 		"json:target/cucumber-reports/cucumber.json"},
 		
-		features = {"src/test/resources/features"},
+		features = {"src/test/resources/features"}, 
 		
 		glue = {"steps"},
 		monochrome = true
@@ -27,9 +27,9 @@ import io.qameta.allure.Description;
 public class RunTests extends AbstractTestNGCucumberTests {
 	
 //	@Override
-//    @DataProvider(parallel = false)
-//    public Object[][] scenarios() {
-//        return super.scenarios();
-//    }
+//  @DataProvider(parallel = false)
+//  public Object[][] scenarios() {
+//      return super.scenarios();
+//  }
 
 }
