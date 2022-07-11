@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ swarm ]
+    branches: [ branch_actions ]
  
 jobs:
   deploy-docker-compose:

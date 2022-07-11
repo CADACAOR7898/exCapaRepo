@@ -50,10 +50,4 @@ jobs:
         timeout-minutes: 2
         run: docker-compose down
 
-      - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
-        if: always()
-        env:
-          SLACK_CHANNEL: automation
-          SLACK_MESSAGE: 'Report TestCases: ${{ secrets.VAULT_ADDR }}'
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      
