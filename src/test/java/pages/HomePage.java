@@ -37,13 +37,14 @@ public class HomePage extends WebPage{
 		seleniumUtils.sendTextWithEnter(inputSearchBox, item);
 		System.out.println("Search item " + item);
 //		seleniumUtils.click(btnSearch);
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		util.captureScreenshot(driver);
 		util.allureCaptureScreenshotRe(driver);
 		return new HomePage(driver);
 	}
 	
-	public HomePage validateResultItem(String result) throws IOException {
+	public HomePage validateResultItem(String result) throws IOException, InterruptedException {
+		Thread.sleep(10000);
 		seleniumUtils.waitWebElementVisibleBy(resultXpath);
 		String result_Xpath = seleniumUtils.getText(resultXpath);
 		seleniumUtils.AssertEquals(result, result_Xpath);
