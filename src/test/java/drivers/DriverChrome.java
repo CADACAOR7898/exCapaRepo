@@ -12,8 +12,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import common.ConfigProp;
 
-
-
 public class DriverChrome extends Driver {
 	
 	@Override
@@ -25,7 +23,6 @@ public class DriverChrome extends Driver {
 		options.addArguments("lang=en-GB");
 		options.setAcceptInsecureCerts(true);
 		options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
-	
 		
 		if (ConfigProp.getPlatform().equals("local")){
 			System.setProperty("webdriver.chrome.driver",ConfigProp.getChromePath());
